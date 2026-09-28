@@ -22,7 +22,18 @@ TOOLS = [
             "required": ["city"],
         },
     },
-    # TODO 1: add a "get_time" tool definition here (same shape, input: "city")
+    {
+        "name": "get_time",
+        "description": "Returns the current time for a given city.",
+        "input_schema": {
+            "type": "object",
+            "properties": {
+                "city": {"type": "string", "description": "City name"},
+            },
+            "required": ["city"],
+        },
+    },
+    
 ]
 
 
@@ -30,15 +41,18 @@ TOOLS = [
 def get_weather(city):
     conditions = ["sunny", "cloudy", "rainy", "windy"]
     return f"{city}: {random.randint(10, 30)}°C, {random.choice(conditions)}"
+    
+from datetime import datetime
+def get_time(city):
+    return f"{city}: {datetime.now().strftime('%H:%M')}"
 
 
-# TODO 2: write get_time(city) that returns the current time as a string
-#         hint: from datetime import datetime  ->  datetime.now().strftime("%H:%M")
 
 
 TOOL_FUNCTIONS = {
     "get_weather": get_weather,
-    # TODO 3: register get_time here
+    "get_time":get_time,
+    
 }
 
 
