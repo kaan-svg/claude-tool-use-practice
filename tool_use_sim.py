@@ -9,7 +9,7 @@ shape as the real API.
 
 import random
 
-# ---------- 1. Tool definitions (JSON Schema, same format as the real API) ----------
+# ---------- 1. Tool definitions ----------
 TOOLS = [
     {
         "name": "get_weather",
@@ -56,7 +56,7 @@ TOOL_FUNCTIONS = {
 }
 
 
-# ---------- 3. Fake model (stands in for the real API call) ----------
+# ---------- 3. Fake model ----------
 KEYWORDS = {
     "get_weather": ["weather", "hava"],
     "get_time": ["time", "saat"],
