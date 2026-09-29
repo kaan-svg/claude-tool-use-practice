@@ -1,6 +1,6 @@
 # Claude Tool Use Practice
 
-A small Python simulation of how **tool use** (function calling) works in the Claude API, built to understand the request/response loop before connecting to the real API. No API key needed.
+A small Python simulation of how **tool use** works in the Claude API, built to understand the request/response loop before connecting to the real API. No API key needed.
 
 ## How It Works
 
