@@ -41,5 +41,5 @@ Model: Here's what I found: Izmir: 22°C, sunny | 14:35
 
 ## Resources
 
-- [anthropics/courses](https://github.com/anthropics/courses) – Official API fundamentals and tool use notebooks
+- [anthropics/courses](https://github.com/anthropics/courses)
 - [Claude tool use docs](https://docs.claude.com/en/docs/agents-and-tools/tool-use/overview)
