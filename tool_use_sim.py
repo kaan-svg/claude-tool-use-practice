@@ -117,7 +117,7 @@ def run(question):
                 print(f"  -> calling {block['name']}({block['input']})")
                 name=block["name"]
                 if name not in TOOL_FUNCTIONS:
-                    output=f"Error: unknow tool {name}"
+                    output=f"Error: Unknow tool {name}"
                 else:
                     try:
                      output = TOOL_FUNCTIONS[block["name"]](**block["input"])
@@ -140,4 +140,3 @@ if __name__ == "__main__":
     for q in questions:
         print(f"User: {q}")
         print(f"Model: {run(q)}\n")
-
