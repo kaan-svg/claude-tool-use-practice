@@ -39,6 +39,7 @@ TOOLS = [
 
 # ---------- 2. Real Python functions behind the tools ----------
 def get_weather(city):
+    
     conditions = ["sunny", "cloudy", "rainy", "windy"]
     return f"{city}: {random.randint(10, 30)}°C, {random.choice(conditions)}"
     
@@ -51,7 +52,8 @@ def get_time(city):
 
 TOOL_FUNCTIONS = {
     "get_weather": get_weather,
-    "get_time":get_time,
+    "get_time": get_time,
+    
     
 }
 
@@ -113,7 +115,14 @@ def run(question):
         for block in response["content"]:
             if block["type"] == "tool_use":
                 print(f"  -> calling {block['name']}({block['input']})")
-                output = TOOL_FUNCTIONS[block["name"]](**block["input"])
+                name=block["name"]
+                if name not in TOOL_FUNCTIONS:
+                    output=f"Error: unknow tool {name}"
+                else:
+                    try:
+                     output = TOOL_FUNCTIONS[block["name"]](**block["input"])
+                    except Exception as e :
+                     output = f"Error : {e}"
                 results.append({
                     "type": "tool_result",
                     "tool_use_id": block["id"],
@@ -131,3 +140,4 @@ if __name__ == "__main__":
     for q in questions:
         print(f"User: {q}")
         print(f"Model: {run(q)}\n")
+
