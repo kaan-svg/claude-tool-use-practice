@@ -38,7 +38,7 @@ Model: Here's what I found: Izmir: 22°C, sunny | 14:35
 - [ ] Replace the fake model with a real Claude API call using the `anthropic` Python SDK
 - [ ] Load the API key from a `.env` file (never commit it)
 - [ ] Add a tool that calls a real external API
-- [ ] Add an interactive mode so users can type their own questions
+- [X] Add an interactive mode so users can type their own questions
 
 ## Resources
 
