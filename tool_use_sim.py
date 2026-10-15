@@ -132,11 +132,14 @@ def run(question):
 
 
 if __name__ == "__main__":
-    questions = [
-        "What's the weather in Istanbul?",
-        "What time is it in Ankara?",
-        "What's the weather and time in Izmir?",
-    ]
+     print("Ask about the weather or time in a city (q to quit).")
+    while True:
+        question = input("\nUser: ").strip()
+        if question.lower() == "q":
+            break
+        if not question:
+            continue
+        print(f"Model: {run(question)}")
     for q in questions:
         print(f"User: {q}")
         print(f"Model: {run(q)}\n")
